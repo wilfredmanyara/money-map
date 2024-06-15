@@ -11,7 +11,15 @@
 - Recharts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features 
+
+```bash
+- Transaction Management
+- Category Statistics
+- Historical Data Aggregates
+- Stunning Charts
+- Icon Selector for Categories
+```
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
