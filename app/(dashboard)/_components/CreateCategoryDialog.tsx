@@ -1,10 +1,30 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { TransactionType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import {
@@ -26,7 +46,7 @@ import { useTheme } from "next-themes";
 interface Props {
   type: TransactionType;
   successCallback: (category: Category) => void;
-  trigger?: ReactNode
+  trigger?: ReactNode;
 }
 
 function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
@@ -38,36 +58,36 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
     },
   });
 
-  const queryClient = useQueryClient()
-  const theme = useTheme()
+  const queryClient = useQueryClient();
+  const theme = useTheme();
 
-  const {mutate, isPending} = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: CreateCategory,
-    onSuccess: async (data:Category) => {
+    onSuccess: async (data: Category) => {
       form.reset({
         name: "",
         icon: "",
         type,
-      })
+      });
 
       toast.success(`Category ${data.name} created successfully 🎉`, {
-        id: "create-category"
-      })
+        id: "create-category",
+      });
 
-      successCallback(data)
+      successCallback(data);
 
       await queryClient.invalidateQueries({
         queryKey: ["categories"],
-      })
+      });
 
-      setOpen(prev => !prev)
+      setOpen((prev) => !prev);
     },
     onError: () => {
       toast.error("Something went wrong", {
-        id: "create-category"
-      })
-    }
-  })
+        id: "create-category",
+      });
+    },
+  });
 
   const onSubmit = useCallback(
     (values: CreateCategorySchemaType) => {
@@ -82,13 +102,17 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        {trigger ? trigger : <Button
-          variant={"ghost"}
-          className="flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground"
-        >
-          <PlusSquare className="mr-2 h-4 w-4" />
-          Create new
-        </Button>}
+        {trigger ? (
+          trigger
+        ) : (
+          <Button
+            variant={"ghost"}
+            className="flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground"
+          >
+            <PlusSquare className="mr-2 h-4 w-4" />
+            Create new
+          </Button>
+        )}
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -189,7 +213,7 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
             </Button>
           </DialogClose>
           <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
-            {!isPending && "Create"} 
+            {!isPending && "Create"}
             {isPending && <Loader2 className="animate-spin" />}
           </Button>
         </DialogFooter>

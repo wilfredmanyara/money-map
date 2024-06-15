@@ -5,7 +5,17 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { ReactNode } from "react";
 import { DeleteCategory } from "../_actions/categories";
 import { toast } from "sonner";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { TransactionType } from "@/lib/types";
 interface Props {
   trigger: ReactNode;
@@ -38,19 +48,26 @@ function DeleteCategoryDialog({ category, trigger }: Props) {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>This Action cannot be undone. This will permanently delete your category</AlertDialogDescription>
+          <AlertDialogDescription>
+            This Action cannot be undone. This will permanently delete your
+            category
+          </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={() => {
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction
+            onClick={() => {
               toast.loading("Deleting category...", {
                 id: categoryIdentifier,
               });
               deleteMutation.mutate({
                 name: category.name,
                 type: category.type as TransactionType,
-              })
-            }}>Continue</AlertDialogAction>
+              });
+            }}
+          >
+            Continue
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -1,8 +1,19 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 import { TransactionType } from "@/lib/types";
 import { Category } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
@@ -13,12 +24,12 @@ import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 interface Props {
   type: TransactionType;
-  onChange: (value:string) => void
+  onChange: (value: string) => void;
 }
 function CategoryPicker({ type, onChange }: Props) {
-    const [open, setOpen] = React.useState(false);
-    const [value, setValue] = React.useState("");
-    
+  const [open, setOpen] = React.useState(false);
+  const [value, setValue] = React.useState("");
+
   useEffect(() => {
     if (!value) return;
     onChange(value); // when the value changes, call the onChange callback
@@ -32,12 +43,15 @@ function CategoryPicker({ type, onChange }: Props) {
 
   const selectedCategory = categoriesQuery.data?.find(
     (category: Category) => category.name === value
-  )
+  );
 
-  const successCallback = useCallback((category: Category) => {
-    setValue(category.name)
-    setOpen((prev) => !prev)
-  },[setValue, setOpen])
+  const successCallback = useCallback(
+    (category: Category) => {
+      setValue(category.name);
+      setOpen((prev) => !prev);
+    },
+    [setValue, setOpen]
+  );
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -63,10 +77,7 @@ function CategoryPicker({ type, onChange }: Props) {
           }}
         >
           <CommandInput placeholder="Search Category..." />
-          <CreateCategoryDialog
-            type={type}
-            successCallback={successCallback}
-          />
+          <CreateCategoryDialog type={type} successCallback={successCallback} />
           <CommandEmpty>
             <p>Category not found</p>
             <p className="text-xs text-muted-foreground">
@@ -103,11 +114,11 @@ function CategoryPicker({ type, onChange }: Props) {
 
 export default CategoryPicker;
 
-function CategoryRow({ category }: { category: Category }){
-    return (
-      <div className="flex items-center gap-2">
-        <span role="img">{category.icon}</span>
-        <span>{category.name}</span>
-      </div>
-    );
-};
+function CategoryRow({ category }: { category: Category }) {
+  return (
+    <div className="flex items-center gap-2">
+      <span role="img">{category.icon}</span>
+      <span>{category.name}</span>
+    </div>
+  );
+}
