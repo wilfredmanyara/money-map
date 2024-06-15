@@ -13,7 +13,7 @@
 
 ## Features 
 
-```bash
+```
 - Transaction Management
 - Category Statistics
 - Historical Data Aggregates
