@@ -1,15 +1,14 @@
 ## Stack 
 
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Nextjs 14: API routes and ServerActions
+- Auth with Clerk
+- Typescript
+- Tailwindcss / Shadcn UI
+- SQLite / Vercel PostgreSQL
+- Prisma as ORM
+- React-query
+- Recharts
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
