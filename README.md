@@ -8,7 +8,7 @@
 - SQLite / Vercel PostgreSQL
 - Prisma as ORM
 - React-query
-- Recharts
+- Recharts.
 ```
 
 ## Features 
