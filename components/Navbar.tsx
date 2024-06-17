@@ -20,7 +20,7 @@ function Navbar() {
 }
 
 const items = [
-  { label: "Dashboard", link: "/" },
+  { label: "Dashboard", link: "/dashboard" },
   { label: "Transactions", link: "/transactions" },
   { label: "Manage", link: "/manage" },
 ];
