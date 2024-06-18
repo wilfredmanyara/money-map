@@ -1,9 +1,7 @@
 import React from 'react'
 
-function layout() {
-  return (
-    <div>layout</div>
-  )
-}
+const HomePageLayout = ({ children }: { children: React.ReactNode }) => {
+  return <main>{children}</main>;
+};
 
-export default layout
+export default HomePageLayout
