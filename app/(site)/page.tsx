@@ -26,14 +26,13 @@ const HomePage = () => {
         <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[300px]">
           <Button
             variant={"secondary"}
-            className="w-full rounded-xl p-6 text-2xl bg-background"
+            className="w-full rounded-xl p-6 text-2xl bg-background cursor-pointer"
           >
             Get Started
           </Button>
         </div>
-        <div className="md:mt-[-90px] sm:w-full w-[750px] flex justify-center items-center mt-[-40px] relative sm:ml-0 ml-[-50px]">
+        <div className="md:-mt-10 sm:w-full w-[750px] flex justify-center items-center -mt-10 relative sm:ml-0 ml-[-50px]">
           <Image src={Banner} alt="Application Banner" />
-          <div className="bottom-0 top-[50%] bg-gradient-to-t dark:from-background left-0 right-0 absolute z-10"></div>
         </div>
       </section>
       <section className="relative">
@@ -94,7 +93,7 @@ const HomePage = () => {
           )}
         </div>
       </section>
-      <section className="px-4 sm:px-6 flex justify-center items-center flex-col relative">
+      <section id="features" className="px-4 sm:px-6 flex justify-center items-center flex-col relative">
         <div className="w-[30%] blur-[120px] rounded-full h-32 absolute bg-emerald-800 -z-10 top-22" />
         <TitleSection
           title="Keep track of all your finances in one place"
@@ -105,7 +104,7 @@ const HomePage = () => {
           <Image src={Banner2} alt="Banner" className="rounded-2xl" />
         </div>
       </section>
-      <section className="relative">
+      <section id="testimonials" className="relative">
         <div className="w-full blur-[120px] rounded-full h-32 absolute bg-emerald-800 -z-10 top-56" />
         <div className="mt-20 px-4 sm:px-6 flex flex-col overflow-x-hidden overflow-visible">
           <TitleSection
@@ -155,7 +154,7 @@ const HomePage = () => {
           ))}
         </div>
       </section>
-      <section className="mt-20 px-4 sm:px-6 ">
+      <section id="pricing" className="mt-20 px-4 sm:px-6 ">
         <TitleSection
           title="The Perfect Plan For You"
           subheading="Experience all benefits of the plartform. Select a plan and take your financial management to new heights"
