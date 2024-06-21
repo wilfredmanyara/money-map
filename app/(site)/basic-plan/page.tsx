@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"; // Import useRouter hook
 import TitleSection from "@/components/landing-page/title-section";
 import Link from "next/link";
 
-export const DonationAmount: FunctionComponent<{
+const DonationAmount: FunctionComponent<{
   amount: number;
   value: number;
   setAmount: (value: number) => void;
