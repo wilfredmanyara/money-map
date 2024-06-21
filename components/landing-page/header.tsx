@@ -88,13 +88,13 @@ const Header = () => {
                     MoneyMap
                   </span>
                 </li>
-                <ListItem href="#" title="Track">
+                <ListItem href="/" title="Track">
                 Simplify budgeting
                 </ListItem>
-                <ListItem href="#" title="Achieve">
+                <ListItem href="/" title="Achieve">
                 Set financial goals
                 </ListItem>
-                <ListItem href="#" title="Analyze">
+                <ListItem href="/" title="Analyze">
                 Customize financial insights
                 </ListItem>
               </ul>
@@ -114,10 +114,10 @@ const Header = () => {
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:grid-rows-2">
-                <ListItem title="Pro Plan" href="#pricing">
+                <ListItem title="Pro Plan" href="/pro-plan">
                   Advanced financial management for in-depth analysis
                 </ListItem>
-                <ListItem title="Basic Plan" href="#pricing">
+                <ListItem title="Basic Plan" href="/basic-plan">
                   Essential budgeting tools for individuals and families
                 </ListItem>
               </ul>
@@ -141,14 +141,14 @@ const Header = () => {
         </NavigationMenuList>
       </NavigationMenu>
       <aside className="flex w-full gap-2 justify-end">
-        <Link href={"/sign-in"}>
+        <Link href={"/basic-plan"}>
           <Button variant="btn-secondary" className="p-1 hidden sm:block">
-            Sign In
+            Basic Plan
           </Button>
         </Link>
-        <Link href={"/sign-up"}>
+        <Link href={"/pro-plan"}>
           <Button variant="btn-primary" className="whitespace-nowrap">
-            Sign Up
+            Pro Plan
           </Button>
         </Link>
       </aside>

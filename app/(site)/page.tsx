@@ -14,6 +14,7 @@ import CustomCard from "@/components/landing-page/custom-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/landing-page/footer";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -24,14 +25,16 @@ const HomePage = () => {
           title="Effortless Tracking, For Smarter Financial Management"
         />
         <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[300px]">
+          <Link href="/basic-plan">
           <Button
             variant={"secondary"}
             className="w-full rounded-xl p-6 text-2xl bg-background cursor-pointer"
           >
             Get Started
           </Button>
+          </Link>
         </div>
-        <div className="md:-mt-10 sm:w-full w-[750px] flex justify-center items-center -mt-10 relative sm:ml-0 ml-[-50px]">
+        <div className="sm:w-full w-[750px] flex justify-center items-center relative sm:ml-0 ml-[-50px]">
           <Image src={Banner} alt="Application Banner" />
         </div>
       </section>
@@ -192,9 +195,11 @@ const HomePage = () => {
                     ""
                   )}
                   <p className="dark:text-white/80 mt-2" >{card.description}</p>
+                  <Link href={card.planType === PRICING_PLANS.proplan ? "/pro-plan" : "/basic-plan"}>
                   <Button variant={"default"} className="whitespace-nowrap w-full mt-4">
-                    {card.planType === PRICING_PLANS.proplan ? "Go Pro" : "Join Waitlist"}
+                    {card.planType === PRICING_PLANS.proplan ? "Go Pro" : "Get Basic"}
                   </Button>
+                  </Link>
                 </CardContent>
               }
               cardFooter={
