@@ -52,7 +52,9 @@ function MobileNavBar() {
           </SheetContent>
         </Sheet>
         <div className="flex h-[80px] min-h-[60px] items-center gap-x-4">
+        <Link href="/">
           <Logo />
+          </Link>
         </div>
         <div className="flex items-center gap-2">
           <ThemeSwitcherBtn />
@@ -68,7 +70,9 @@ function DesktopNavbar() {
     <div className="hidden border-separate border-b bg-background md:block">
       <nav className="container flex items-center justify-between px-8">
         <div className="flex h-[50px] min-h-[60px] items-center gap-x-4">
+          <Link href="/">
           <Logo />
+          </Link>
           <div className="flex h-full ">
             {items.map((item) => (
               <NavbarItem
