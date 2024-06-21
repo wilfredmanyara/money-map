@@ -27,6 +27,12 @@ export default function RootLayout({
         }}
       >
         <body className={inter.className}>
+        <script
+            async
+            defer
+            data-domain="www.moneymap.pro"
+            src="https://penkle.com/scripts/penkle.min.js"
+          ></script>
           <Toaster richColors position="bottom-right" />
           <RootProviders>{children}</RootProviders>
         </body>
