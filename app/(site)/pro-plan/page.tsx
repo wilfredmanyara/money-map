@@ -35,10 +35,9 @@ const Pricing = () => {
           <h1 className="text-5xl text-black/85 font-bold">Pay to Get Started</h1>
           <p className="textBlock-subtitle font-semibold text-rose-500">Choose any options below.</p>
           <Link href="/dashboard" className="textBlock-subtitle font-bold text-emerald-500">ALREADY PAID? CLICK HERE</Link>
-          {/*<div className="flex space-x-10">
-            <DonationAmount value={19} setAmount={setAmount} amount={amount} />
+          <div className="flex space-x-10">
             <DonationAmount value={39} setAmount={setAmount} amount={amount} />
-  </div>*/}
+          </div>
           <PayPalScriptProvider options={{ "clientId": "AZUaQ_HyK8Q-FMwkSupGjXSH3hzRo_9QcQEpzN2fhLcaOgnFmuNwUEnXiQUmBHi_heGIeddTB85i4tO1" }}>
             <div className="w-full flex justify-center mt-4 bg-transparent">
               <div className="paypal-button-container w-full max-w-[500px] bg-transparent">
