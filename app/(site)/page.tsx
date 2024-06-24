@@ -16,6 +16,7 @@ import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/landing-page/footer";
 import Link from "next/link";
 import ResponsiveVideo from "@/components/landing-page/responsivevideo";
+import ProductHuntBadge from "@/components/landing-page/ProductHuntBadge";
 
 const HomePage = () => {
   return (
@@ -25,15 +26,18 @@ const HomePage = () => {
           pill="⭐ Your Finances, Perfected"
           title="Effortless Tracking, For Smarter Financial Management"
         />
-        <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[300px]">
+        <div className="flex flex-col items-center sm:flex-row sm:items-center justify-center">
+        <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[244px]">
           <Link href="/basic-plan">
-          <Button
-            variant={"secondary"}
-            className="w-full rounded-xl p-6 text-2xl bg-background cursor-pointer"
-          >
-            Get Started
-          </Button>
+            <Button
+              variant={"secondary"}
+              className="w-[240px] rounded-xl p-6 text-2xl bg-background cursor-pointer"
+            >
+              Get Started
+            </Button>
           </Link>
+        </div>
+        <ProductHuntBadge />
         </div>
       </section>
       <ResponsiveVideo src="https://www.youtube.com/embed/crZU-MqUG7w?si=YJEPLBf1N7XcW1pr" />
@@ -95,7 +99,10 @@ const HomePage = () => {
           )}
         </div>
       </section>
-      <section id="features" className="px-4 sm:px-6 flex justify-center items-center flex-col relative">
+      <section
+        id="features"
+        className="px-4 sm:px-6 flex justify-center items-center flex-col relative"
+      >
         <div className="w-[30%] blur-[120px] rounded-full h-32 absolute bg-emerald-800 -z-10 top-22" />
         <TitleSection
           title="Keep track of all your finances in one place"
@@ -193,11 +200,22 @@ const HomePage = () => {
                   ) : (
                     ""
                   )}
-                  <p className="dark:text-white/80 mt-2" >{card.description}</p>
-                  <Link href={card.planType === PRICING_PLANS.proplan ? "/pro-plan" : "/basic-plan"}>
-                  <Button variant={"default"} className="whitespace-nowrap w-full mt-4">
-                    {card.planType === PRICING_PLANS.proplan ? "Go Pro" : "Get Basic"}
-                  </Button>
+                  <p className="dark:text-white/80 mt-2">{card.description}</p>
+                  <Link
+                    href={
+                      card.planType === PRICING_PLANS.proplan
+                        ? "/pro-plan"
+                        : "/basic-plan"
+                    }
+                  >
+                    <Button
+                      variant={"default"}
+                      className="whitespace-nowrap w-full mt-4"
+                    >
+                      {card.planType === PRICING_PLANS.proplan
+                        ? "Go Pro"
+                        : "Get Basic"}
+                    </Button>
                   </Link>
                 </CardContent>
               }
