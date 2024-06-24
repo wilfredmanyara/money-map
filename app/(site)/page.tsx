@@ -26,7 +26,7 @@ const HomePage = () => {
           pill="⭐ Your Finances, Perfected"
           title="Effortless Tracking, For Smarter Financial Management"
         />
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-center sm:flex-row sm:items-center justify-center">
         <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[244px]">
           <Link href="/basic-plan">
             <Button
