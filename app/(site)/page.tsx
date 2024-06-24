@@ -27,7 +27,7 @@ const HomePage = () => {
           title="Effortless Tracking, For Smarter Financial Management"
         />
         <div className="flex flex-col items-center sm:flex-row sm:items-center justify-center">
-        <div className="bg-white p-[2px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[244px]">
+        <div className="bg-white p-[1px] mt-6 rounded-xl bg-gradient-to-r from-emerald-500 to-rose-500 sm:w-[242px]">
           <Link href="/basic-plan">
             <Button
               variant={"secondary"}
@@ -40,6 +40,9 @@ const HomePage = () => {
         <ProductHuntBadge />
         </div>
       </section>
+      <>
+        <div className="hidden dark:block w-full blur-[120px] rounded-full h-32 absolute bg-emerald-500/80 -z-10 top-0" />
+      </>
       <ResponsiveVideo src="https://www.youtube.com/embed/crZU-MqUG7w?si=YJEPLBf1N7XcW1pr" />
       <section className="relative">
         <div
