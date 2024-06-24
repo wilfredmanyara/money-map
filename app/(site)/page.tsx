@@ -15,6 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/landing-page/footer";
 import Link from "next/link";
+import ResponsiveVideo from "@/components/landing-page/responsivevideo";
 
 const HomePage = () => {
   return (
@@ -34,10 +35,8 @@ const HomePage = () => {
           </Button>
           </Link>
         </div>
-        <div className="sm:w-full w-[750px] flex justify-center items-center relative sm:ml-0 ml-[-50px]">
-          <Image src={Banner} alt="Application Banner" />
-        </div>
       </section>
+      <ResponsiveVideo src="https://www.youtube.com/embed/crZU-MqUG7w?si=YJEPLBf1N7XcW1pr" />
       <section className="relative">
         <div
           className="
